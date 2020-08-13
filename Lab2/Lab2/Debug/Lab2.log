@@ -1,0 +1,4 @@
+﻿  Lab2.cpp
+E:\LTCT\Lab2\Lab2\Thuvien.h(111,25): warning C4804: '<=': unsafe use of type 'bool' in operation
+E:\LTCT\Lab2\Lab2\Thuvien.h(152,9): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  Lab2.vcxproj -> E:\LTCT\Lab2\Debug\Lab2.exe
