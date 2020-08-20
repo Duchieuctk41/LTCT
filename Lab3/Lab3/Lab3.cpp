@@ -19,7 +19,7 @@ int main()
 void ChayChuongTrinh() 
 {
     int Menu,
-        SoMenu = 6;
+        SoMenu = 9;
     int n = 0;
     do
     {

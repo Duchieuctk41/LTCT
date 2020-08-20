@@ -1,4 +1,5 @@
 ﻿#define TAB "\t";
+#define MAX 1000;
 
 using namespace std;
 
@@ -252,3 +253,193 @@ void LietKeSoNT(unsigned int n)
 		so++;
 	}
 }
+
+int GiaiPT1An(float a, float b, float& x) {
+	if (a == 0) {
+		if (b == 0)
+			return 2;
+		return 0;
+	}
+	x = -b / a;
+	return 1;
+}
+int NhapSo()
+{
+	float a, b, x;
+	cout << "Nhap a:";
+	cin >> a;
+	cout << "Nhap b:";
+	cin >> b;
+	if (GiaiPT1An(a, b, x) == 0)
+		cout << "Phuong trinh vo nghiem" << endl;
+	else if (GiaiPT1An(a, b, x) == 1)
+		cout << "Phuong trinh co mot nghiem: " << x << endl;
+	else
+		cout << "Phuong trinh co vo so nghiem" << endl;
+	return 0;
+}
+void TinhBieuThuc(float x, float y, char k)
+{
+	switch (k)
+	{
+	case '+':
+		cout << "x + y  = " << x + y;
+		break;
+	case '-':
+		cout << "x - y = " << x - y;
+		break;
+	case 'x':
+		cout << "x * y = " << x * y;
+		break;
+	case '/':
+		cout << "x / y = " << x / y;
+		break;
+	default:
+		cout << "k khong hop le";
+		break;
+
+	}
+}
+void NhapBieuThuc()
+{
+	float x, y;
+	char k;
+	cout << "\nNhap x (!= 0): ";
+	cin >> x;
+	while (!x)
+	{
+		cout << "x phai khac 0: ";
+		cin >> x;
+	}
+	cout << "\nNhap y (!= 0): ";
+	cin >> y;
+	while (!y)
+	{
+		cout << "y phai khac 0: ";
+		cin >> y;
+	}
+	cout << "Nhap k (+ - * /): ";
+	cin >> k;
+	TinhBieuThuc(x,y,k);
+}
+
+int gcd(int a, int b) {
+	if (b == 0)
+	{
+		return a;
+	}
+	return gcd(b, a % b);
+
+}
+int BCNN(int a, int b)
+{
+	int lcm = a * b / gcd(a, b);
+	cout << "\nBCNN = " << lcm;
+	return 1;
+}
+
+int NhapUCLN()
+{
+	int a, b;
+	cout << "\nNhap a: ";
+	cin >> a;
+	cout << "\nNhap b: ";
+	cin >> b;
+	cout << "\nUCLN = " << gcd(a, b);
+	BCNN(a, b);
+	return 1;
+}
+
+int ChonMucDoan()
+{
+	int k;
+	do
+	{
+		cout << "\nChon so lan doan toi da ( 3,5,7) : k = ";
+		cin >> k;
+	} while (k != 3 && k != 5 && k != 7);
+	return k;
+}
+
+int SinhSoNgauNhien()
+{
+	int soDe;
+	//gieo so ngau nhien
+	srand((unsigned int)time(0)); //khai bao <time.h>
+	//tao so ngau nhien
+	soDe = rand() / MAX; //khai bao <stdlib.h>
+	return soDe;
+}
+
+int XuLyTroChoi(int k, int soDe)
+{
+	int i,
+		soDoan,
+		kq = 0;
+	for (i = 1; i <= k; i++)
+	{
+		cout << "\nDoan lan " << i << ", so doan = ";
+		cin >> soDoan;
+		if (soDoan == soDe)
+		{
+			kq = 1;
+			break;
+		}
+		else
+		{
+			if (soDoan < soDe)
+			{
+				cout << "\nSo doan lon hon nha cmm";
+			}
+
+			else
+			{
+				cout << "\nSo doan nho hon";
+			}
+		}
+			
+				
+
+	}
+	return kq;
+}
+
+void ThongBaoKetQua(int kq, int soDe)
+{
+	system("CLS");
+	cout << "\nKET QUA TRO CHOI : ";
+	if (kq)
+		cout << "\nNguoi choi thang";
+	else
+		cout << "\nNguoi choi thua";
+	cout << "\nDe cho so : " << soDe;
+}
+
+void RunProgram()
+{
+	char kt;
+	int kq, k, soDe,x;
+	do
+	{
+		system("CLS");
+		soDe = SinhSoNgauNhien();
+		k = ChonMucDoan();
+		kq = XuLyTroChoi(k, soDe);
+		system("CLS");
+		cout << "\nTRO CHOI DOAN SO VOI SO LAN DOAN : k = " << k << " :\n";
+		ThongBaoKetQua(kq, soDe);
+
+			_getch();
+		system("CLS");
+		cout << "\nChoi nua khong, nhan 0 neu khong!\n";
+		cin >> x;
+		if (x == 0)
+		{
+			break;
+		}
+		kt = _getch();
+	} while (kt != 27);
+}
+
+
+
