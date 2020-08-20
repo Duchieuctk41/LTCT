@@ -10,7 +10,10 @@ void XuatMenu()
 	cout << "\n4. Tinh Luy Thua";
 	cout << "\n5. Bai Toan Thong Ke Diem (Ket Hop for voi switch)";
 	cout << "\n6. Kiem Tra Liet Ke So Nguyen To";
-
+	cout << "\n7. Phuong trinh bac nhat 1 an";
+	cout << "\n8. Tinh bieu thuc";
+	cout << "\n9. Tim UCLN";
+	cout << "\n10. Tro choi doan so";
 
 }
 
@@ -109,6 +112,29 @@ void XuLyMenu(int Menu, int& n)
 		cout << endl << "Nhap so luong so NT can tim : ";
 		cin >> n1;
 		LietKeSoNT(n1);
+		break;
+
+	case 7:
+		system("CLS");
+		cout << "\n7. Phuong trinh bac nhat 1 an";
+		NhapSo();
+		break;
+
+	case 8:
+		system("CLS");
+		cout << "\n8. Tinh bieu thuc";
+		NhapBieuThuc();
+		break;
+
+	case 9:
+		system("CLS");
+		cout << "\n9. Tim UCLN";
+		NhapUCLN();
+		break;
+	case 10:
+		system("CLS");
+		cout << "\n10. Tro choi doan so";
+		RunProgram();
 		break;
 	}
 }

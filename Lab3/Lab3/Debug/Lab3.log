@@ -1,10 +1,10 @@
 ﻿  Lab3.cpp
-E:\LTCT\Lab3\Lab3\ThuVien.h(148,21): warning C4018: '<=': signed/unsigned mismatch
-E:\LTCT\Lab3\Lab3\ThuVien.h(158,20): warning C4018: '<=': signed/unsigned mismatch
-E:\LTCT\Lab3\Lab3\ThuVien.h(182,20): warning C4018: '<': signed/unsigned mismatch
-E:\LTCT\Lab3\Lab3\ThuVien.h(242,13): warning C4018: '<': signed/unsigned mismatch
-E:\LTCT\Lab3\Lab3\Menu.h(26,25): warning C4804: '<=': unsafe use of type 'bool' in operation
-E:\LTCT\Lab3\Lab3\Menu.h(61,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\LTCT\Lab3\Lab3\Menu.h(61,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\LTCT\Lab3\Lab3\Menu.h(61,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\LTCT\Lab3\Lab3\ThuVien.h(149,21): warning C4018: '<=': signed/unsigned mismatch
+E:\LTCT\Lab3\Lab3\ThuVien.h(159,20): warning C4018: '<=': signed/unsigned mismatch
+E:\LTCT\Lab3\Lab3\ThuVien.h(183,20): warning C4018: '<': signed/unsigned mismatch
+E:\LTCT\Lab3\Lab3\ThuVien.h(243,13): warning C4018: '<': signed/unsigned mismatch
+E:\LTCT\Lab3\Lab3\Menu.h(29,25): warning C4804: '<=': unsafe use of type 'bool' in operation
+E:\LTCT\Lab3\Lab3\Menu.h(64,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\LTCT\Lab3\Lab3\Menu.h(64,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\LTCT\Lab3\Lab3\Menu.h(64,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Lab3.vcxproj -> E:\LTCT\Lab3\Debug\Lab3.exe
