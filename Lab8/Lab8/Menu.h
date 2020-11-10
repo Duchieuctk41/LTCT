@@ -79,6 +79,7 @@ void XuLyMenu(int Menu, NhanVien a[MAX], int &n)
 	case 4:
 		system("CLS");
 		cout << "\n4. Xoa mot nhan vien theo ma so";
+		Xuat_DSNV(a, n);
 		cout << "\nNhap ma nhan vien can xoa :";
 		cin >> maNV;
 		cout << "\nDanh sach hien hanh :\n";

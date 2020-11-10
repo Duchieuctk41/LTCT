@@ -161,10 +161,8 @@ void XoaNhanVien_MaNV(NhanVien a[MAX], int &n, char maNV[8])
 		}
 	}
 	for (j = i + 1; j < n; j++)
-	{
 		a[j - 1] = a[j];
-		n--;
-	}
+	n--;
 }
 // Trong tập tin menu.h :
 // Khai báo nguyên mẫu các hàm xử lý menu
