@@ -1,6 +1,6 @@
 #include <iostream>
 #include <conio.h>
-#include <string>
+#include <cmath>
 #include <sstream>
 
 using namespace std;
@@ -18,14 +18,15 @@ int main()
 
 void ChayChuongTrinh()
 {
-  int SoMenu = 5,
+  int SoMenu = 7,
       menu, n;
+  DaySo a;
   n = NhapSo(n);
   XuatSo(n);
   do
   {
     menu = ChonMenu(SoMenu, n);
-    XuLyMenu(menu, n);
+    XuLyMenu(menu, a, n);
     _getch();
   } while (menu > 0);
 };

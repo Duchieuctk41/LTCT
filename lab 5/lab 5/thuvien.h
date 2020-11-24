@@ -3,8 +3,6 @@
 
 typedef int DaySo[MAX];
 
-using namespace std;
-
 void NhapMang(DaySo a, int n);
 void XuatMang(DaySo a, int n);
 int ChuaX(DaySo a, int n, int x);
