@@ -14,7 +14,7 @@ struct NgayThangNam
 struct NhanVien
 {
   char maNV[8];
-  char hoLot[21];
+  char hoLot[30];
   char ten[8];
   NgayThangNam ntns;
   char diaChi[21];
@@ -41,42 +41,45 @@ double TinhTongLuong(NhanVien a[MAX], int n);
 void Nhap_1NV(NhanVien &p)
 {
   cout << endl
-       << "Nhap ma so nhan vien (toi da 7 ky tu)";
+       << "Nhap ma so nhan vien (toi da 7 ky tu): ";
   _flushall();
   fgets(p.maNV, 8, stdin);
 
   cout << endl
-       << "Nhap Ho lot";
+       << "Nhap Ho lot: ";
   _flushall();
-  fgets(p.hoLot, 21, stdin);
+  fgets(p.hoLot, 21 , stdin);
+  p.hoLot[strlen(p.hoLot) - 1] = '\0';
 
   cout << endl
-       << "Nhap ten";
+       << "Nhap ten: ";
   _flushall();
   fgets(p.ten, 8, stdin);
+  p.ten[strlen(p.ten) - 1] = '\0';
 
   cout << endl
-       << "Nhap ngay sinh";
+       << "Nhap ngay sinh: ";
   _flushall();
   cin >> p.ntns.ngaySinh;
 
   cout << endl
-       << "Nhap thang sinh";
+       << "Nhap thang sinh: ";
   _flushall();
   cin >> p.ntns.thangSinh;
 
   cout << endl
-       << "Nhap nam sinh";
+       << "Nhap nam sinh: ";
   _flushall();
   cin >> p.ntns.namSinh;
 
   cout << endl
-       << "Nhap dia chi";
+       << "Nhap dia chi: ";
   _flushall();
   fgets(p.diaChi, 21, stdin);
+  p.diaChi[strlen(p.diaChi) - 1] = '\0';
 
   cout << endl
-       << "Nhap luong";
+       << "Nhap luong: ";
   _flushall();
   cin >> p.luong;
 }
@@ -84,13 +87,13 @@ void Nhap_1NV(NhanVien &p)
 void Nhap_DSNV(NhanVien a[MAX], int &n)
 {
   cout << endl
-       << "Nhap n";
+       << "Nhap n: ";
   cin >> n;
   for (int i = 0; i < n; i++)
   {
     system("CLS");
     cout << endl
-         << "Nhap thong tin nhan vien thu " << i + 1 << ":";
+         << "Nhap thong tin nhan vien thu " << i + 1 << ": ";
     Nhap_1NV(a[i]);
   }
 }
@@ -132,8 +135,7 @@ void Xuat_1NV(NhanVien p)
        << setw(8) << p.maNV
        << ":"
        << setw(21) << p.hoLot
-       << ":"
-       << setw(8) << p.ten
+       << ":" << p.ten
        << ":"
        << setw(2) << p.ntns.ngaySinh
        << "/"
@@ -143,7 +145,7 @@ void Xuat_1NV(NhanVien p)
        << ":"
        << setw(16) << p.diaChi
        << ":"
-       << setw(12) << setiosflags(ios::fixed) << setprecision(2)
+       << setw(12)
        << p.luong
        << ":";
 }
@@ -309,14 +311,14 @@ void TimKiemNhanVien_Ten(NhanVien a[MAX], int &n, char tenNV[8])
 void SapTang_MaNV(NhanVien a[MAX], int n)
 {
   int i, j;
-  for ( i = 0; i < n - 1; i++)
+  for (i = 0; i < n - 1; i++)
   {
-    for ( j = i + 1; j < n; j++)
+    for (j = i + 1; j < n; j++)
     {
-      if(_strcmpi(a[i].maNV, a[j].maNV) > 0)
+      if (_strcmpi(a[i].maNV, a[j].maNV) > 0)
         HoanVi(a[i], a[j]);
     }
-  } 
+  }
 }
 
 void HoanVi(NhanVien &p, NhanVien &q)
@@ -330,12 +332,12 @@ void HoanVi(NhanVien &p, NhanVien &q)
 void SapXep_Ho_Luong(NhanVien a[MAX], int n)
 {
   // Sap xep theo ten
-  for ( int i = 0; i < n - 1; i++)
+  for (int i = 0; i < n - 1; i++)
   {
     for (int j = i + 1; j < n; j++)
     {
-      if(_strcmpi(a[i].ten, a[j].ten) > 0)
-          HoanVi(a[i], a[j]);
+      if (_strcmpi(a[i].ten, a[j].ten) > 0)
+        HoanVi(a[i], a[j]);
     }
   }
   // Sap xep theo ho
@@ -376,14 +378,14 @@ void XuatNV_Luong_TuXTroLen(NhanVien a[MAX], int n, double x)
   XuatTieuDe();
   for (int i = 0; i < n; i++)
   {
-    if(a[i].luong >= x)
+    if (a[i].luong >= x)
     {
       cout << endl;
       Xuat_1NV(a[i]);
       kq++;
     }
   }
-  if(!kq)
+  if (!kq)
     cout << endl
          << "Khong co nhan vien nao co muc luong tren " << x;
   else
@@ -398,14 +400,14 @@ void XuatNV_NamSinh_TuUDenY(NhanVien a[MAX], int n, unsigned int u, unsigned int
   XuatTieuDe();
   for (int i = 0; i < n; i++)
   {
-    if(u <= a[i].ntns.namSinh && a[i].ntns.namSinh <= y)
+    if (u <= a[i].ntns.namSinh && a[i].ntns.namSinh <= y)
     {
       cout << endl;
       Xuat_1NV(a[i]);
       kq++;
     }
   }
-  if(!kq)
+  if (!kq)
     cout << endl
          << "Khong co nhan vien nao co nam sinh tu " << u << " - " << y;
   else
