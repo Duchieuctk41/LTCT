@@ -3,7 +3,7 @@ void XuatMenu()
   cout << "\n============== HE THONG CHUC NANG =================\n";
   cout << "\n0. Thoat khoi chuong trinh";
   cout << "\n1. Nhap danh sach nhan vien";
-  cout << "\n2. xem danh sach nhan vien";
+  cout << "\n2. Xem danh sach nhan vien";
   cout << "\n3. Them mot nhan vien vao cuoi danh sach";
   cout << "\n4. Xoa mot nhan vien theo ma nhan vien";
   cout << "\n5. Sua thong tin nhan vien theo ma nhan vien";
@@ -24,8 +24,9 @@ int ChonMenu(int SoMenu)
   int chon;
   for (;;)
   {
+    XuatMenu();
     cout << endl
-         << "chon tu 0 - " << SoMenu;
+         << "chon tu 0 - " << SoMenu << endl;
     cin >> chon;
     if (0 <= chon && chon <= SoMenu)
       break;
@@ -33,7 +34,7 @@ int ChonMenu(int SoMenu)
   return chon;
 };
 
-void XuLyMenu(int menu)
+void XuLyMenu(int menu, NhanVien a[max], int n)
 {
   switch (menu)
   {
@@ -44,9 +45,20 @@ void XuLyMenu(int menu)
          << "Nhan phim bat ki de thoat chuong trinh" << endl;
     break;
   case 1:
-    cout << "\n1. Nhap danh sach nhan vien";
-
+    cout << "\n1. Xuat 1 nhan vien\n";
+    Xuat_1NV(a[1]);
+    break;
+  case 2:
+    cout << "\n2. Xuat danh sach nhan vien\n";
+    Xuat_DSNV(a, n);
+    break;
+  case 3:
+    cout << "\n3. Nhap danh sach nhan vien\n";
+    NhapDSNV(a, n);
+    Xuat_DSNV(a, n);
+    break;
   default:
     break;
   }
+  _getch();
 };
