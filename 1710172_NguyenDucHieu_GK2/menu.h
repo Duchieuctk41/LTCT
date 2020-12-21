@@ -75,7 +75,7 @@ void XuLyMenu(int menu, MaTranVuong a, int &n)
     cout << "\nMa tran hien hanh:\n";
     XuatMaTran(a, n);
     cout << "\nMin hang max cot cua a:\n";
-    MinHang_MaxCot(a, n);
+    Xuat_MinHang_MaxCot(a, n);
     break;
   }
   _getch();
