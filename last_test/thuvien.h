@@ -31,19 +31,8 @@ int TaoDSNV(NhanVien a[max], int &n, char filename[max])
     return 0;
 
   n = 0;
-  in >> a[n].maSo;
-  in >> a[n].hoten.ho;
-  in >> a[n].hoten.tenDem;
-  in >> a[n].hoten.ten;
-  in >> a[n].ntns.ngay;
-  in >> a[n].ntns.thang;
-  in >> a[n].ntns.nam;
-  in >> a[n].diaChi;
-  in >> a[n].luong;
-
-  while (!in.eof())
+  do
   {
-    n = n + 1;
     in >> a[n].maSo;
     in >> a[n].hoten.ho;
     in >> a[n].hoten.tenDem;
@@ -53,7 +42,8 @@ int TaoDSNV(NhanVien a[max], int &n, char filename[max])
     in >> a[n].ntns.nam;
     in >> a[n].diaChi;
     in >> a[n].luong;
-  }
+    n++;
+  } while (!in.eof());
 
   in.close();
   return 1;
@@ -84,6 +74,7 @@ void XuatTieuDe()
        << setw(8) << "Luong"
        << "\n";
   XuatKeNgang();
+  cout << "\n";
 };
 
 void Xuat1NV(NhanVien a)
@@ -104,7 +95,6 @@ void Xuat1NV(NhanVien a)
 
 void XuatDSNV(NhanVien a[max], int n)
 {
-  cout << "\n";
   for (int i = 0; i < n; i++)
   {
     Xuat1NV(a[i]);
@@ -112,4 +102,30 @@ void XuatDSNV(NhanVien a[max], int n)
   XuatKeNgang();
 }
 
-
+void TimNV_Nam(NhanVien a[max], int n, int nam)
+{
+  int vitri[max];
+  int stt = 0;
+  for (int i = 0; i < n; i++)
+  {
+    if (a[i].ntns.nam == nam)
+    {
+      vitri[stt] = i;
+      stt++;
+    }
+  }
+  if (stt == 0)
+  {
+    cout << "\nKhong tim thay nhan vien sinh nam " << nam << " trong danh sach";
+  }
+  else
+  {
+    cout << "\nTim thay " << stt + 1 << " nhan vien sinh nam " << nam << " trong danh sach\n";
+    XuatTieuDe();
+    for (int i = 0; i < stt; i++)
+    {
+      Xuat1NV(a[vitri[i]]);
+    }
+    XuatKeNgang();
+  }
+};
