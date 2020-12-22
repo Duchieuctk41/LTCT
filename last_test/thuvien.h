@@ -104,28 +104,52 @@ void XuatDSNV(NhanVien a[max], int n)
 
 void TimNV_Nam(NhanVien a[max], int n, int nam)
 {
-  int vitri[max];
-  int stt = 0;
+  bool kq = false;
   for (int i = 0; i < n; i++)
   {
     if (a[i].ntns.nam == nam)
+      kq = true;
+    if (kq)
     {
-      vitri[stt] = i;
-      stt++;
+      int dem = 0;
+      XuatTieuDe();
+      for (int i = 0; i < n; i++)
+        if (a[i].ntns.nam == nam)
+        {
+          Xuat1NV(a[i]);
+          dem++;
+        }
+      XuatKeNgang();
+      cout << "\nCo " << dem << " nhan vien sinh nam " << nam << " trong danh sach.";
+      break;
     }
   }
-  if (stt == 0)
-  {
-    cout << "\nKhong tim thay nhan vien sinh nam " << nam << " trong danh sach";
-  }
-  else
-  {
-    cout << "\nTim thay " << stt + 1 << " nhan vien sinh nam " << nam << " trong danh sach\n";
-    XuatTieuDe();
-    for (int i = 0; i < stt; i++)
+  if (!kq)
+    cout << "\nKhong tim thay nhan vien sinh nam " << nam << " trong danh sach.\n";
+};
+
+int Tim_MinSalary(NhanVien a[max], int n)
+{
+  int min = a[0].luong;
+  for (int i = 1; i < n; i++)
+    if (min > a[i].luong)
     {
-      Xuat1NV(a[vitri[i]]);
+      min = a[i].luong;
     }
-    XuatKeNgang();
-  }
+  return min;
+};
+
+void XuatNV_MinSalary(NhanVien a[max], int n)
+{
+  int min = Tim_MinSalary(a, n);
+  int dem = 0;
+  XuatTieuDe();
+  for (int i = 0; i < n; i++)
+    if (a[i].luong == min)
+    {
+      Xuat1NV(a[i]);
+      dem++;
+    }
+  XuatKeNgang();
+  cout << "\nCo " << dem << " nhan vien co luong thap nhat";
 };

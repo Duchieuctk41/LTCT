@@ -48,7 +48,6 @@ void XuLyMenu(int menu, NhanVien a[max], int &n)
     else
     {
       cout << "\nMo tap tin thanh cong. So nhan vien hien tai la: " << n;
-      cout << "\nDanh sach nhan vien hien tai:\n";
     }
     break;
   case 2:
@@ -61,6 +60,10 @@ void XuLyMenu(int menu, NhanVien a[max], int &n)
     cout << "\nNhap nam sinh ban muon tim: ";
     cin >> nam;
     TimNV_Nam(a, n, nam);
+    break;
+  case 4:
+    cout << "\n4. Xuat nhan vien co luong thap nhat.\n";
+    XuatNV_MinSalary(a, n);
     break;
 
   default:
