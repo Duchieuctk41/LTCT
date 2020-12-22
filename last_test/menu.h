@@ -28,7 +28,7 @@ int ChonMenu(int soMenu)
   return chon;
 }
 
-void XuLyMenu(int menu, NhanVien a[max], int n)
+void XuLyMenu(int menu, NhanVien a[max], int &n)
 {
   char filename[max];
   int kq;
@@ -54,7 +54,7 @@ void XuLyMenu(int menu, NhanVien a[max], int n)
   case 2:
     cout << "\n2. Xuat danh sach nhan vien.";
     XuatTieuDe();
-    Xuat1NV(a[1]);
+    XuatDSNV(a, n);
     break;
 
   default:

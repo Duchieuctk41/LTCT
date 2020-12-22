@@ -88,17 +88,28 @@ void XuatTieuDe()
 
 void Xuat1NV(NhanVien a)
 {
-  cout << "\n"
-       << setiosflags(ios::left)
-       << setw(11) << a.maSo
-       << setw(8) << a.hoten.ho
-       << setw(12) << a.hoten.tenDem
-       << setw(8) << a.hoten.ten
-       << setw(4) << a.ntns.ngay
-       << setw(4) << a.ntns.thang
-       << setw(6) << a.ntns.nam
-       << setw(12) << a.diaChi
-       << setw(8) << a.luong
-       << "\n";
-  XuatKeNgang();
+  cout
+      << setiosflags(ios::left)
+      << setw(11) << a.maSo
+      << setw(8) << a.hoten.ho
+      << setw(12) << a.hoten.tenDem
+      << setw(8) << a.hoten.ten
+      << setw(4) << a.ntns.ngay
+      << setw(4) << a.ntns.thang
+      << setw(6) << a.ntns.nam
+      << setw(12) << a.diaChi
+      << setw(8) << a.luong
+      << "\n";
 };
+
+void XuatDSNV(NhanVien a[max], int n)
+{
+  cout << "\n";
+  for (int i = 0; i < n; i++)
+  {
+    Xuat1NV(a[i]);
+  }
+  XuatKeNgang();
+}
+
+
