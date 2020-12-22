@@ -50,7 +50,11 @@ void XuLyMenu(int menu, NhanVien a[max], int n)
       cout << "\nMo tap tin thanh cong. So nhan vien hien tai la: " << n;
       cout << "\nDanh sach nhan vien hien tai:\n";
     }
-
+    break;
+  case 2:
+    cout << "\n2. Xuat danh sach nhan vien.";
+    XuatTieuDe();
+    Xuat1NV(a[1]);
     break;
 
   default:
