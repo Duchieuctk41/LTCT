@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "*.extension": "html",
+    "limits": "cpp"
+  }
+}

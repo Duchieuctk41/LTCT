@@ -5,7 +5,8 @@ void XuatMenu()
   cout << "\n1. Tao danh sach nhan vien.";
   cout << "\n2. Xuat danh sach nhan vien.";
   cout << "\n3. Xuat nhan vien sinh nam 1980.";
-  cout << "\n4. Xoa nhan vien co luong thap nhat.";
+  cout << "\n4. Tim nhan vien co luong thap nhat.";
+  cout << "\n5. Xoa nhan vien co luong thap nhat.";
   cout << "\n5. Sap xep danh sach nhan vien tang dan theo nam sinh - ma so.";
   cout << "\n6. Liet ke nhan vien co ten Duong.";
   cout << "\n7. Sap xep danh sach nhan vien tang dan theo luong - ma so.";
@@ -64,6 +65,9 @@ void XuLyMenu(int menu, NhanVien a[max], int &n)
   case 4:
     cout << "\n4. Xuat nhan vien co luong thap nhat.\n";
     XuatNV_MinSalary(a, n);
+    break;
+  case 5:
+    cout << "\n5. Xoa nhan vien co luong thap nhat.";
     break;
 
   default:
